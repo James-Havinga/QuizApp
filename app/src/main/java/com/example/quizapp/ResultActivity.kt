@@ -14,10 +14,10 @@ class ResultActivity : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         // Receiving data from quiz
-        val username = intent.getStringExtra(FlagConstants.USER_NAME)
+        val username = intent.getStringExtra(Constants.USER_NAME)
         tv_name.text = username
-        val totalQuestions = intent.getIntExtra(FlagConstants.TOTAL_QUESTIONS, 0)
-        val correctAnswers = intent.getIntExtra(FlagConstants.CORRECT_ANSWERS, 0)
+        val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
+        val correctAnswers = intent.getIntExtra(Constants.CORRECT_ANSWERS, 0)
         tv_score.text = "Your score is $correctAnswers out of $totalQuestions"
         // Finish button to go back to name page
         btn_finish.setOnClickListener{

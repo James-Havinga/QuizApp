@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 }else{
                 // Go to next page and save the username
                 val intent = Intent(this, CategoryActivity::class.java)
-                intent.putExtra(FlagConstants.USER_NAME, et_name.text.toString())
+                intent.putExtra(Constants.USER_NAME, et_name.text.toString())
                 startActivity(intent)
                 finish()
             }

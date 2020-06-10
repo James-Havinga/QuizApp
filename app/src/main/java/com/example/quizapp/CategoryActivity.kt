@@ -15,14 +15,21 @@ class CategoryActivity : AppCompatActivity() {
         //Hide status bar on top of phone
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
-        mUserName = intent.getStringExtra(FlagConstants.USER_NAME)
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
         tv_flags.setOnClickListener{
-            val intent = Intent(this, QuizQuestionsActivity::class.java)
-            intent.putExtra(FlagConstants.USER_NAME, mUserName)
+            val intent = Intent(this, FlagQuestionsActivity::class.java)
+            intent.putExtra(Constants.USER_NAME, mUserName)
+            startActivity(intent)
+            finish()
+        }
+
+        tv_logos.setOnClickListener{
+            val intent = Intent(this, LogoQuestionsActivity::class.java)
+            intent.putExtra(Constants.USER_NAME, mUserName)
             startActivity(intent)
             finish()
         }

@@ -9,14 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CategoryActivity"></activity>
+        <activity android:name=".LogoQuestionsActivity"></activity>
+        <activity android:name=".FlagQuestionsActivity" />
+        <activity android:name=".CategoryActivity" />
         <activity
             android:name=".ResultActivity"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBarTheme" />
-        <activity
-            android:name=".QuizQuestionsActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"

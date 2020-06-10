@@ -10,10 +10,10 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_quiz_questions.*
+import kotlinx.android.synthetic.main.activity_logo_questions.*
 import java.lang.reflect.Type
 
-class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
+class LogoQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition:Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
@@ -23,15 +23,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_quiz_questions)
+        setContentView(R.layout.activity_logo_questions)
 
         //Hide status bar on top of phone
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         // Retrieving Username
-        mUserName = intent.getStringExtra(FlagConstants.USER_NAME)
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
         // Retrieving Questions
-        mQuestionsList = FlagConstants.getQuestions()
+        mQuestionsList = Constants.getLogoQuestions()
 
         setQuestion()
 
@@ -106,13 +106,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }else ->{
                         // Send details to results page
-                            val intent = Intent(this, ResultActivity::class.java)
-                            intent.putExtra(FlagConstants.USER_NAME, mUserName)
-                            intent.putExtra(FlagConstants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(FlagConstants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-                            startActivity(intent)
-                            finish()
-                        }
+                        val intent = Intent(this, ResultActivity::class.java)
+                        intent.putExtra(Constants.USER_NAME, mUserName)
+                        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                        startActivity(intent)
+                        finish()
+                    }
                     }
                 }else{
                     // Displaying weather the users answer was correct or wrong
