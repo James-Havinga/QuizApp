@@ -29,9 +29,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         // Retrieving Username
-        mUserName = intent.getStringExtra(Constants.USER_NAME)
+        mUserName = intent.getStringExtra(FlagConstants.USER_NAME)
         // Retrieving Questions
-        mQuestionsList = Constants.getQuestions()
+        mQuestionsList = FlagConstants.getQuestions()
 
         setQuestion()
 
@@ -107,9 +107,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }else ->{
                         // Send details to results page
                             val intent = Intent(this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, mUserName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            intent.putExtra(FlagConstants.USER_NAME, mUserName)
+                            intent.putExtra(FlagConstants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(FlagConstants.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
                             finish()
                         }
