@@ -40,5 +40,12 @@ class CategoryActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        tv_plants.setOnClickListener{
+            val intent = Intent(this, PlantQuestionsActivity::class.java)
+            intent.putExtra(Constants.USER_NAME, mUserName)
+            startActivity(intent)
+            finish()
+        }
     }
 }

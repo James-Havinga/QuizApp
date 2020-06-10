@@ -416,4 +416,141 @@ object Constants {
 
         return questionsList
     }
+
+    // Plant Questions
+    fun getPlantQuestions(): ArrayList<Question> {
+        val questionsList = ArrayList<Question>()
+
+        val que1 = Question(
+            1,
+            "What is the name of this plant?",
+            R.drawable.ic_basil,
+            "Basil",
+            "Celery",
+            "Thyme",
+            "Mint",
+            1
+        )
+
+        questionsList.add(que1)
+
+        val que2 = Question(
+            2,
+            "What is the name of this plant?",
+            R.drawable.ic_cat_mint,
+            "Sage",
+            "Cat Mint",
+            "Salvia",
+            "Yarrow",
+            2
+        )
+
+        questionsList.add(que2)
+
+        val que3 = Question(
+            3,
+            "What is the name of this plant?",
+            R.drawable.ic_holly_fern,
+            "Sword Fern",
+            "Holly Fern",
+            "Ostrich Fern",
+            "Autumn Fern",
+            2
+        )
+
+        questionsList.add(que3)
+
+        val que4 = Question(
+            4,
+            "What is the name of this plant?",
+            R.drawable.ic_hydrangea,
+            "Snowball Shrub",
+            "Ixora",
+            "Hydrangea",
+            "Lilac",
+            3
+        )
+
+        questionsList.add(que4)
+
+        val que5 = Question(
+            5,
+            "What is the name of this plant?",
+            R.drawable.ic_milkweed,
+            "Butterfly Weed ",
+            "Swamp Milkweed",
+            "Common Milkweed ",
+            "Mexican Butterfly Weed",
+            3
+        )
+
+        questionsList.add(que5)
+
+        val que6 = Question(
+            6,
+            "What is the name of this plant?",
+            R.drawable.ic_nightshade,
+            "Capsicum",
+            "Mandrake",
+            "Nightshade",
+            "Jimson Weed ",
+            3
+        )
+
+        questionsList.add(que6)
+
+        val que7 = Question(
+            7,
+            "What is the name of this plant?",
+            R.drawable.ic_peruvian_doffodil,
+            "Glory of the Snow",
+            "Peruvian Daffodil",
+            "Tulip",
+            "Agapanthus",
+            2
+        )
+
+        questionsList.add(que7)
+
+        val que8 = Question(
+            8,
+            "What is the name of this plant?",
+            R.drawable.ic_poppy,
+            "Anemone",
+            "Poppy",
+            "Tulip",
+            "Peony",
+            2
+        )
+
+        questionsList.add(que8)
+
+        val que9 = Question(
+            9,
+            "What is the name of this plant?",
+            R.drawable.ic_shasta_daisy,
+            "German Chamomile",
+            "Marigold",
+            "Aster",
+            "Shasta Daisy",
+            4
+        )
+
+        questionsList.add(que9)
+
+        val que10 = Question(
+            10,
+            "What is the name of this plant?",
+            R.drawable.ic_siberian_iris,
+            "Daffodil",
+            "Columbine",
+            "Iris",
+            "Pansy",
+            3
+        )
+
+        questionsList.add(que10)
+
+        return questionsList
+    }
 }

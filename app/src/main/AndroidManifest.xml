@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnimalQuestionsActivity"></activity>
+        <activity android:name=".PlantQuestionsActivity"></activity>
+        <activity android:name=".AnimalQuestionsActivity" />
         <activity android:name=".LogoQuestionsActivity" />
         <activity android:name=".FlagQuestionsActivity" />
         <activity android:name=".CategoryActivity" />
