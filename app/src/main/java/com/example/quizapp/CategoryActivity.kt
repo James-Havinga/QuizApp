@@ -33,5 +33,12 @@ class CategoryActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        tv_animals.setOnClickListener{
+            val intent = Intent(this, AnimalQuestionsActivity::class.java)
+            intent.putExtra(Constants.USER_NAME, mUserName)
+            startActivity(intent)
+            finish()
+        }
     }
 }

@@ -279,4 +279,141 @@ object Constants {
 
         return questionsList
     }
+
+    // Animal Questions
+    fun getAnimalQuestions(): ArrayList<Question> {
+        val questionsList = ArrayList<Question>()
+
+        val que1 = Question(
+            1,
+            "What is the name of this animal?",
+            R.drawable.ic_african_elephant,
+            "African Elephant",
+            "Rhinoceros",
+            "Hippopotamus",
+            "Lion",
+            1
+        )
+
+        questionsList.add(que1)
+
+        val que2 = Question(
+            2,
+            "What is the name of this animal?",
+            R.drawable.ic_african_wild_dog,
+            "Domestic Dog",
+            "African Wild Dog",
+            "Hyena",
+            "Mongoose",
+            2
+        )
+
+        questionsList.add(que2)
+
+        val que3 = Question(
+            3,
+            "What is the name of this animal?",
+            R.drawable.ic_bongo,
+            "Antelope",
+            "Bongo",
+            "Impala",
+            "Reed Buck",
+            2
+        )
+
+        questionsList.add(que3)
+
+        val que4 = Question(
+            4,
+            "What is the name of this animal?",
+            R.drawable.ic_grizzly_bear,
+            "Polar Bear",
+            "Black Bear",
+            "Grizzly Bear",
+            "Brown Bear",
+            3
+        )
+
+        questionsList.add(que4)
+
+        val que5 = Question(
+            5,
+            "What is the name of this animal?",
+            R.drawable.ic_impala,
+            "Inyala",
+            "Kudu",
+            "Impala",
+            "Reed Buck",
+            3
+        )
+
+        questionsList.add(que5)
+
+        val que6 = Question(
+            6,
+            "What is the name of this animal?",
+            R.drawable.ic_lion,
+            "Cheetah",
+            "Leopard",
+            "Lion",
+            "Domestic Cat",
+            3
+        )
+
+        questionsList.add(que6)
+
+        val que7 = Question(
+            7,
+            "What is the name of this animal?",
+            R.drawable.ic_lynx,
+            "Leopard",
+            "Lynx",
+            "Domestic Cat",
+            "Lion",
+            2
+        )
+
+        questionsList.add(que7)
+
+        val que8 = Question(
+            8,
+            "What is the name of this animal?",
+            R.drawable.ic_moose,
+            "Kudu",
+            "Moose",
+            "Elk",
+            "Deer",
+            2
+        )
+
+        questionsList.add(que8)
+
+        val que9 = Question(
+            9,
+            "What is the name of this animal?",
+            R.drawable.ic_sloth,
+            "Orangutan",
+            "Chimpanzee",
+            "Lemur",
+            "Sloth",
+            4
+        )
+
+        questionsList.add(que9)
+
+        val que10 = Question(
+            10,
+            "What is the name of this animal?",
+            R.drawable.ic_tiger,
+            "Domestic Cat",
+            "Leopard",
+            "Tiger",
+            "Lion",
+            3
+        )
+
+        questionsList.add(que10)
+
+        return questionsList
+    }
 }
