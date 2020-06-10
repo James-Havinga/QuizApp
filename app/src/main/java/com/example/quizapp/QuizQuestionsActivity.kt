@@ -25,15 +25,17 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
 
+        //Hide status bar on top of phone
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         // Retrieving Username
         mUserName = intent.getStringExtra(Constants.USER_NAME)
-
+        // Retrieving Questions
         mQuestionsList = Constants.getQuestions()
 
         setQuestion()
 
+        // Onclick Listeners for options and submit button
         tv_option_one.setOnClickListener(this)
         tv_option_two.setOnClickListener(this)
         tv_option_three.setOnClickListener(this)
@@ -41,21 +43,21 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         btn_submit.setOnClickListener(this)
 
     }
-
+    // Controlling what question to display
     private fun setQuestion(){
         val question = mQuestionsList!![mCurrentPosition-1]
 
         defaultOptionsView()
-
+        // Changing button when quiz is finished
         if(mCurrentPosition == mQuestionsList!!.size){
             btn_submit.text = "FINISH"
         }else{
             btn_submit.text = "SUBMIT"
         }
-
+        // progress bar
         progressBar.progress = mCurrentPosition
         tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
-
+        // Displaying question and is relevant answers
         tv_question.text = question!!.question
         iv_image.setImageResource(question.image)
         tv_option_one.text = question.optionOne
@@ -63,7 +65,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv_option_three.text = question.optionThree
         tv_option_four.text = question.optionFour
     }
-
+    // What each answer looks like when not selected
     private fun defaultOptionsView(){
         val options = ArrayList<TextView>()
         options.add(0, tv_option_one)
@@ -80,7 +82,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             )
         }
     }
-
+    // onclick function to show which answer the user selected
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.tv_option_one ->{
@@ -113,10 +115,12 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }else{
+                    // Displaying weather the users answer was correct or wrong
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
                     if(question!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }else{
+                        // Adding up all the users correct answers
                         mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
@@ -126,12 +130,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     }else{
                         btn_submit.text = "GO TO NEXT QUESTION"
                     }
+                    // Resetting the users selection for the next question
                     mSelectedOptionPosition = 0
                 }
             }
         }
     }
-
+    // Displaying the answers for the question
     private fun answerView(answer: Int, drawableView: Int){
         when(answer){
             1 ->{
@@ -156,7 +161,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
+    // Changing box of answer that the user selected
     private fun selectedOptionView(tv: TextView, selectedOptionNum: Int){
         defaultOptionsView()
         mSelectedOptionPosition = selectedOptionNum
